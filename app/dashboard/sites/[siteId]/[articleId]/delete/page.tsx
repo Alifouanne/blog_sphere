@@ -10,7 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { SubmitButton } from "@/components/dashboard/SubmitButtons";
 import { DeletePost } from "@/lib/actions";
-
+export const dynamic = "force-dynamic";
 export default async function DeleteArticlePage({
   params,
 }: {
