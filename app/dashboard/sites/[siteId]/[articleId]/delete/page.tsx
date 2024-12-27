@@ -16,6 +16,7 @@ export default async function DeleteArticlePage({
 }: {
   params: { siteId: string; articleId: string };
 }) {
+  const { siteId, articleId } = await params;
   return (
     <div className="container flex min-h-[600px] items-center justify-center">
       <Card className="w-full max-w-xl">
@@ -30,11 +31,11 @@ export default async function DeleteArticlePage({
         </CardHeader>
         <CardFooter className="flex justify-between gap-4">
           <Button variant="outline" size="lg" className="w-full" asChild>
-            <Link href={`/dashboard/sites/${params.siteId}`}>Cancel</Link>
+            <Link href={`/dashboard/sites/${siteId}`}>Cancel</Link>
           </Button>
           <form action={DeletePost} className="w-full">
-            <Input type="hidden" name="articleId" value={params.articleId} />
-            <Input type="hidden" name="siteId" value={params.siteId} />
+            <Input type="hidden" name="articleId" value={articleId} />
+            <Input type="hidden" name="siteId" value={siteId} />
             <SubmitButton
               text="Delete Article"
               variant="destructive"
