@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   creator: "Ali Fouanne",
   publisher: "Ali Fouanne",
 };
+export const dynamic = "force-dynamic";
 
 export default function RootLayout({
   children,

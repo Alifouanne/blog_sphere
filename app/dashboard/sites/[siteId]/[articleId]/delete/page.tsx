@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export default async function DeleteArticlePage({
   params,
 }: {
-  params: { siteId: string; articleId: string };
+  params: Promise<{ siteId: string; articleId: string }>;
 }) {
   const { siteId, articleId } = await params;
   return (

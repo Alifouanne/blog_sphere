@@ -62,7 +62,7 @@ async function getData(userId: string, siteId: string) {
 export default async function SitePage({
   params,
 }: {
-  params: { siteId: string };
+  params: Promise<{ siteId: string }>;
 }) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
