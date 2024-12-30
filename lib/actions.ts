@@ -181,8 +181,14 @@ export async function CreateSubscription() {
       address: "auto",
       name: "auto",
     },
-    success_url: "http://localhost:3000/dashboard/payment/success",
-    cancel_url: "http://localhost:3000/dashboard/payment/cancel",
+    success_url:
+      process.env.NODE_ENV === "production"
+        ? "https://blog-sphere-lemon.vercel.app/dashboard/payment/success"
+        : "http://localhost:3000/dashboard/payment/success",
+    cancel_url:
+      process.env.NODE_ENV === "production"
+        ? "https://blog-sphere-lemon.vercel.app/dashboard/payment/cancel"
+        : "http://localhost:3000/dashboard/payment/cancel",
     line_items: [{ price: process.env.STRIPE_PRICE_ID, quantity: 1 }],
   });
   return redirect(session.url as string);
@@ -191,7 +197,10 @@ export async function CreateSubscription() {
 export async function CreateCustomerPortal(formdata: FormData) {
   const session = await stripe.billingPortal.sessions.create({
     customer: formdata.get("customerId") as string,
-    return_url: "http://localhost:3000/dashboard",
+    return_url:
+      process.env.NODE_ENV === "production"
+        ? "https://blog-sphere-lemon.vercel.app/dashboard"
+        : "http://localhost:3000/dashboard",
   });
   return redirect(session.url);
 }
