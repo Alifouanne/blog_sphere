@@ -50,7 +50,7 @@ export default function BlogNav({ name }: BlogNavProps) {
       <div className="container flex h-16 items-center justify-between px-4">
         <div className="flex-1" />
         <div className="flex items-center justify-center gap-3">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/blog" className="flex items-center gap-2">
             <Image
               src={theme === "light" ? Logo : WhiteLogo}
               alt="Blog Logo"
