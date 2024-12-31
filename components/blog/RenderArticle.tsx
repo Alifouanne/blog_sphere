@@ -18,6 +18,7 @@ import Placeholder from "@tiptap/extension-placeholder";
 import TaskItem from "@tiptap/extension-task-item";
 import HoriontalRule from "@tiptap/extension-horizontal-rule";
 import TaskList from "@tiptap/extension-task-list";
+import OrderedList from "@tiptap/extension-ordered-list";
 const RenderArticle = ({ json }: { json: JSONContent }) => {
   const out = useMemo(() => {
     return generateHTML(json, [
@@ -37,6 +38,7 @@ const RenderArticle = ({ json }: { json: JSONContent }) => {
       TaskItem,
       HoriontalRule,
       TaskList,
+      OrderedList,
     ]);
   }, [json]);
   return (
