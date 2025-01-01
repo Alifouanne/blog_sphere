@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Sphere - Modern Blog SaaS Platform
 
-## Getting Started
+Blog Sphere is a powerful, feature-rich blogging platform that enables users to create and manage multiple blogs with ease. Built with modern technologies and best practices, it offers both free and premium tiers for different user needs.
 
-First, run the development server:
+![Blog Sphere Logo](./public/logo.png)
 
+## ✨ Features
+
+### Free Tier
+- Create and manage one site with multiple blogs
+- Rich text editor for content creation
+- Customizable blog appearance
+- Secure authentication
+- Responsive design
+
+### Premium Tier
+- Create and manage multiple sites
+- All features from free tier
+- Advanced customization options
+- Subscription management
+- Priority support
+
+## 🚀 Tech Stack
+
+- **Frontend Framework**: [Next.js 15](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Authentication**: [Kinde](https://kinde.com/)
+- **Database**: 
+  - ORM: [Prisma](https://www.prisma.io/)
+  - Database: [Supabase](https://supabase.com/)
+- **Form Handling**: 
+  - Validation: [Zod](https://zod.dev/)
+  - Type-safe forms: [Conform](https://conform.guide/)
+- **Rich Text Editor**: [Novel](https://novel.sh/) with [Tiptap](https://tiptap.dev/)
+- **Image Storage**: [uploadthing](https://uploadthing.com/)
+- **Payments**: [Stripe](https://stripe.com/)
+- **Type Safety**: [TypeScript](https://www.typescriptlang.org/)
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Alifouanne/blog-sphere.git
+cd blog-sphere
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+bun install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up your database:
+```bash
+bunx prisma generate
+bunx prisma db push
+```
 
-## Learn More
+5. Run the development server:
+```bash
+bun run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔑 Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env.local` file with the following variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+KINDE_CLIENT_ID
+KINDE_CLIENT_SECRET
+KINDE_ISSUER_URL
+KINDE_SITE_URL
+KINDE_POST_LOGOUT_REDIRECT_URL
+KINDE_POST_LOGIN_REDIRECT_URL
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+DATABASE_URL
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+DIRECT_URL
+
+UPLOADTHING_TOKEN=
+
+STRIPE_SECRET_KEY=
+STRIPE_PRICE_ID=
+STRIPE_WEBHOOK_SECRET=
+
+
+## 🔒 Security
+
+- Secure authentication with Kinde
+- Type-safe API routes and form handling
+- Secure payment processing with Stripe
+- Protected routes and API endpoints
+- Data validation with Zod
+
+## 🎯 Key Features
+
+1. **Blog Management**
+   - Create and edit blogs
+   - Rich text editing
+   - Image uploads
+   - Draft and publish functionality
+
+2. **Site Management**
+   - Customize site appearance
+   - Manage multiple sites (Premium)
+   - Site analytics
+
+3. **User Management**
+   - Secure authentication
+   - User profiles
+   - Subscription management
+
+4. **Subscription System**
+   - Free and premium tiers
+   - Stripe integration
+   - Subscription status tracking
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Kinde](https://kinde.com/)
+- [Supabase](https://supabase.com/)
+- [Stripe](https://stripe.com/)
+
+---
+
+Built with ❤️ using Next.js and TypeScript
